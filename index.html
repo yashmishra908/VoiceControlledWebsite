@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Speech color changer</title>
+    <link rel ="javascript" type="text/javascript" href="Voice Commands.js"/>
+
+     
+  </head>
+
+  <body>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+        
+        <script>
+                    if (annyang) {
+          // Add our commands to annyang 
+          annyang.addCommands({
+            'hello': function() { alert('Hello world!'); }
+          });
+          
+          annyang.addCommands({
+            'hi': function() { alert('Hi Yash'); }
+          });
+          
+          annyang.addCommands({
+            'open': function() { window.open("https://drive.google.com/open?id=0B07FiDFHtjSKcHlLSHBRcDBfM3M"); }
+          });
+
+          // Tell KITT to use annyang 
+          SpeechKITT.annyang();
+
+          // Define a stylesheet for KITT to use 
+          SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+          // Render KITT's interface 
+          SpeechKITT.vroom();
+        }
+        </script>
+
+  </body>
+</html>
