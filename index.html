@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width">
 
     <title>Speech color changer</title>
-    <link rel ="javascript" type="text/javascript" href="Voice Commands.js"/>
+    <link rel ="stylesheet" type="text/css" href="maincss.css"/>
 
      
   </head>
 
-  <body>
+  <body style = "background-color: grey">
         <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+               
         
         <script>
                     if (annyang) {
@@ -29,6 +30,26 @@
           annyang.addCommands({
             'open': function() { window.open("https://drive.google.com/open?id=0B07FiDFHtjSKcHlLSHBRcDBfM3M"); }
           });
+          
+          annyang.addCommands({
+            'red colour': function() { document.body.style.background = 'red'; }
+          });
+          
+          annyang.addCommands({
+            'up': function() { window.scrollBy(0,-250); }
+          });
+          
+          annyang.addCommands({
+            'down': function() { window.scrollBy(0,250); }
+          });
+          
+          annyang.addCommands({
+            'reload': function() { location.reload(); }
+          });
+          
+          annyang.addCommands({
+            'next': function() { window.open("http://localhost:8383/HTML%20START/Basic.html"); }
+          });
 
           // Tell KITT to use annyang 
           SpeechKITT.annyang();
@@ -39,7 +60,33 @@
           // Render KITT's interface 
           SpeechKITT.vroom();
         }
-        </script>
+        </script>        
+         
+         <div class="container">
 
+            <header>
+               <h1>Art and LifeStyle</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h1 style="text-align: center; background-color: gray;">Trade</h1>
+              <img src ="Flower1.png" height = "50%" width="50%" alt = "Missing">
+              <br>
+              <img src ="http://photovide.com/wp-content/uploads2/2013/02/Flower-Art-12.jpg" height = "50%" width="50%" alt = "Missing">  
+            </article>
+            
+            <footer>Copyright &copy; I.D.I.O.T.com</footer>
+
+        </div>
+         
   </body>
 </html>
